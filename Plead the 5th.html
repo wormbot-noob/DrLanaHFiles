@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🚨 OFFICIAL PLEAD THE FIFTH NOTICE 🚨</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-image: url('https://i.imgur.com/JtQJb7a.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            border: 3px solid #ffd700;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+        }
+        .suits-header {
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #ffd700, #ffffff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
+        }
+        .stamp {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            background: #c00;
+            color: #ff0;
+            padding: 8px 12px;
+            transform: rotate(15deg);
+            font-weight: bold;
+            border: 2px dashed #ff0;
+            font-family: sans-serif;
+        }
+        button {
+            background: #1a2a6c;
+            color: white;
+            border: 2px solid #ffd700;
+            padding: 10px 20px;
+            font-family: inherit;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+        button:hover {
+            background: #ffd700;
+            color: #000;
+        }
+        #harveyGif {
+            width: 200px;
+            margin-top: 20px;
+            display: none;
+            border: 2px solid #ffd700;
+        }
+        .play-music {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stamp">TOP SECRET</div>
+        <h1 class="suits-header">PEARSON SPECTER LITT</h1>
+        <p><em>*This document is legally binding in 11 out of 10 jurisdictions*</em></p>
+        
+        <h2>🚨 OFFICIAL PLEAD THE FIFTH NOTICE 🚨</h2>
+        <p><strong>To:</strong> Dr. Lana</p>
+        <p><strong>From:</strong> Mike Ross (allegedly)</p>
+        
+        <p>I hereby exercise my <strong>Fifth Amendment rights</strong> regarding:</p>
+        <ul style="text-align: left; margin-left: 20px;">
+            <li>Whether I actually knew what I was doing in Year 1</li>
+            <li>The number of times I re-used your advice as my own</li>
+            <li>That one consult where I definitely Googled the answer</li>
+        </ul>
+        
+        <button onclick="playMusic()">⚖️ PLAY SUITS THEME (EVIDENCE)</button>
+        <button onclick="showHarvey()">🔥 HARVEY'S VERDICT</button>
+        
+        <img id="harveyGif" src="https://media.giphy.com/media/Mak4KBUlcNFdu/giphy.gif" alt="Harvey Specter smirk">
+        
+        <div class="play-music">
+            <p><em>"You just got Litt up." — Louis Litt, probably</em></p>
+        </div>
+    </div>
+
+    <script>
+        // Play Suits theme when button is pressed
+        function playMusic() {
+            const audio = new Audio('https://themesong.info/wp-content/uploads/2018/10/Suits_Theme_-_Lyrics_-_Greenback_Boogie_-_Ima_Robot_HD.mp3'
+            audio.play();
+        }
+        
+        // Show Harvey GIF
+        function showHarvey() {
+            const gif = document.getElementById('harveyGif');
+            gif.style.display = gif.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

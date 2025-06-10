@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuroplasticity Report | Dr. Halaseh's Findings</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #0a0a1a;
+            color: #e0e0ff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        h1 {
+            color: #ffd700;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 0 5px rgba(0,0,0,0.7);
+        }
+        .subtitle {
+            font-style: italic;
+            color: #4ecdc4;
+            position: relative;
+            z-index: 2;
+        }
+        .stamp {
+            position: absolute;
+            top: -15px;
+            right: 20%;
+            background: #c00;
+            color: #ff0;
+            padding: 5px 10px;
+            transform: rotate(15deg);
+            font-weight: bold;
+            border: 2px dashed #ff0;
+            font-size: 0.8rem;
+            z-index: 1;
+        }
+        .eeg-container {
+            height: 150px;
+            background: #12122a;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            border: 1px solid #4ecdc4;
+        }
+        .eeg-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(to right, rgba(78, 205, 196, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(78, 205, 196, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .eeg-line {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: none;
+        }
+        .eeg-line::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #4ecdc4, transparent);
+            animation: eeg 3s infinite linear;
+        }
+        @keyframes eeg {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .eeg-line:nth-child(1)::before { animation-delay: 0s; top: 30%; }
+        .eeg-line:nth-child(2)::before { animation-delay: 0.5s; top: 50%; }
+        .eeg-line:nth-child(3)::before { animation-delay: 1s; top: 70%; }
+        .gauge-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .gauge {
+            width: 100%;
+            height: 30px;
+            background: #12122a;
+            border-radius: 15px;
+            margin: 1rem 0;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #4ecdc4;
+        }
+        .gauge-fill {
+            height: 100%;
+            width: 89%;
+            background: linear-gradient(90deg, #1a2a6c, #4ecdc4);
+            transition: width 0.5s;
+        }
+        .gauge-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+        .slider {
+            width: 100%;
+            margin: 1rem 0;
+            -webkit-appearance: none;
+            height: 8px;
+            background: #12122a;
+            border-radius: 4px;
+            border: 1px solid #4ecdc4;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #ffd700;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .conclusion {
+            background: rgba(74, 107, 140, 0.2);
+            padding: 1.5rem;
+            border-left: 4px solid #ffd700;
+            margin: 2rem 0;
+        }
+        button {
+            background: #1a2a6c;
+            color: white;
+            border: 1px solid #ffd700;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+        button:hover {
+            background: #ffd700;
+            color: #121212;
+        }
+        .hidden {
+            display: none;
+        }
+        .diagnosis-tag {
+            display: inline-block;
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin: 0 5px;
+            font-size: 0.8rem;
+            border: 1px dashed #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>OBSERVATIONS ON NEURAL REWIRING IN ONE M. ROSS</h1>
+        <div class="subtitle">Under Dr. Halaseh's Mentorship | Longitudinal Study (2021-2025)</div>
+        <div class="stamp">CLASSIFIED</div>
+    </div>
+
+    <div class="eeg-container">
+        <div class="eeg-grid"></div>
+        <div class="eeg-line"></div>
+        <div class="eeg-line"></div>
+        <div class="eeg-line"></div>
+    </div>
+
+    <h2>INITIAL DIAGNOSES</h2>
+    <p>
+        <span class="diagnosis-tag">Chronic Self-Doubt</span>
+        <span class="diagnosis-tag">Existential Dread</span>
+        <span class="diagnosis-tag">Attention Deficit</span>
+        <span class="diagnosis-tag">Depression</span>
+    </p>
+
+    <h2>METHODS</h2>
+    <ul>
+        <li>Daily exposure to "You have to be odd to be number one" maxim</li>
+        <li>Forced potential-reaching exercises (2021-2025)</li>
+        <li>Control group: None (no comparable mentor found)</li>
+        <li>Adjunct therapy: <span class="diagnosis-tag">Caffeine</span> + <span class="diagnosis-tag">Sleep Deprivation</span></li>
+    </ul>
+
+    <div class="gauge-container">
+        <h2>POTENTIAL-REACHING EFFICIENCY</h2>
+        <p>Adjust slider to reflect your professional opinion:</p>
+        <div class="gauge">
+            <div class="gauge-fill" id="gaugeFill"></div>
+        </div>
+        <input type="range" min="0" max="100" value="89" class="slider" id="progressSlider">
+        <div class="gauge-labels">
+            <span>0% (Pre-Dr. Halaseh)</span>
+            <span id="currentValue">89%</span>
+            <span>100% (Harvey-Level)</span>
+        </div>
+    </div>
+
+    <div class="conclusion">
+        <h2>CONCLUSION</h2>
+        <p id="conclusionText">Subject now reaches potential 89% faster than baseline despite persistent <span class="diagnosis-tag">Existential Dread</span>. Recommended treatment: Continue being odd. PRN: More mentorship.</p>
+    </div>
+
+    <button id="showBonus">⚡ Generate Final Verdict</button>
+    <div id="bonusConclusion" class="hidden">
+        <h2>FINAL VERDICT</h2>
+        <p>Based on your assessment: <strong><span id="verdictText"></span></strong></p>
+        <p><em>"This court finds the defendant (you) guilty of excessive competence despite <span class="diagnosis-tag">Chronic Self-Doubt</span>. Sentencing: Keep teaching me."</em></p>
+    </div>
+
+    <script>
+        // Update gauge and value display
+        const slider = document.getElementById('progressSlider');
+        const gaugeFill = document.getElementById('gaugeFill');
+        const currentValue = document.getElementById('currentValue');
+        const conclusionText = document.getElementById('conclusionText');
+        
+        slider.addEventListener('input', function() {
+            const value = this.value;
+            gaugeFill.style.width = value + '%';
+            currentValue.textContent = value + '%';
+            conclusionText.innerHTML = `Subject now reaches potential ${value}% faster than baseline despite persistent <span class="diagnosis-tag">Existential Dread</span>. Recommended treatment: Continue being odd. PRN: More mentorship.`;
+        });
+
+        // Generate verdict
+        document.getElementById('showBonus').addEventListener('click', function() {
+            const value = slider.value;
+            let verdict;
+            
+            if (value < 30) verdict = "Needs immediate intervention (more Dr. Halaseh time)";
+            else if (value < 70) verdict = "Promising but requires supervision";
+            else if (value < 90) verdict = "Exceeding expectations (oddness confirmed)";
+            else verdict = "Harvey Specter-level potential achieved";
+            
+            document.getElementById('verdictText').textContent = verdict;
+            document.getElementById('bonusConclusion').classList.remove('hidden');
+            this.style.display = 'none';
+        });
+
+        // Enhanced EEG animation
+        const eegContainer = document.querySelector('.eeg-container');
+        for (let i = 0; i < 5; i++) {
+            const line = document.createElement('div');
+            line.className = 'eeg-line';
+            line.style.top = `${20 + (i * 20)}%`;
+            line.style.animationDelay = `${i * 0.3}s`;
+            eegContainer.appendChild(line);
+        }
+    </script>
+</body>
+</html>

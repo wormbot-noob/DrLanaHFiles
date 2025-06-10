@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Dr. Halaseh</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: #000;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            background-image: radial-gradient(circle at center, #1a1a2e 0%, #000 100%);
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 600px;
+        }
+        .text-block {
+            opacity: 0;
+            transform: translateY(20px);
+            margin: 30px 0;
+            line-height: 1.8;
+        }
+        .highlight {
+            color: #ffd700;
+            font-style: italic;
+        }
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <div class="container" id="container">
+        <div class="text-block" id="line1">Access granted to: <span class="highlight">The privilege of knowing you.</span></div>
+        <div class="text-block" id="line2">Throwback to all the times I got a glimpse of the human beneath the white coat</div>
+        <div class="text-block" id="line3">The nurturing soul wearing her stethoscope</div>
+        <div class="text-block" id="line4">The steadfast faith guiding the scientific rigor</div>
+        <div class="text-block" id="line5">The profound care within the clinical composure</div>
+        <div class="text-block" id="line6">The deep emotion behind the measured demeanour</div>
+        <div class="text-block" id="line7">To every rare glimpse into the universe within you</div>
+        <div class="text-block" id="line8">The privilege I was granted, remains <span class="highlight">the most sacred.</span></div>
+    </div>
+
+    <script>
+        // Create stars
+        const stars = document.getElementById('stars');
+        for (let i = 0; i < 200; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.width = `${Math.random() * 3}px`;
+            star.style.height = star.style.width;
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            stars.appendChild(star);
+        }
+
+        // Animate text sequentially
+        const lines = document.querySelectorAll('.text-block');
+        lines.forEach((line, index) => {
+            setTimeout(() => {
+                line.style.animation = 'fadeInUp 1.5s ease forwards';
+            }, index * 1000); // 1 second delay between lines
+        });
+    </script>
+</body>
+</html>
